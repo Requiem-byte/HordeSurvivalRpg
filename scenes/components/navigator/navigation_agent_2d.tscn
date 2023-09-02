@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://be35rd4ikw5qg"]
+
+[ext_resource type="Script" path="res://scenes/components/navigator/navigation_agent_2d.gd" id="1_38wlc"]
+
+[node name="NavigationComponent" type="NavigationAgent2D"]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.890196, 0.25098, 0.290196, 0.678431)
+script = ExtResource("1_38wlc")

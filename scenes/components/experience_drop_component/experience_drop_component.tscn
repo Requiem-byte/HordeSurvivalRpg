@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b72bh5mxapc2"]
+
+[ext_resource type="Script" path="res://scenes/components/experience_drop_component/experience_drop_component.gd" id="1_iamnb"]
+
+[node name="ExperienceDropComponent" type="Node2D"]
+script = ExtResource("1_iamnb")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=6 format=3 uid="uid://w5tenhg4gv56"]
+
+[ext_resource type="Script" path="res://scenes/components/upgrade_manager/upgrade_manager.gd" id="1_kfgj2"]
+[ext_resource type="PackedScene" uid="uid://ftlgmqbt6c5o" path="res://scenes/entities/UI/upgrade_creen/upgrade_screen.tscn" id="2_53v36"]
+[ext_resource type="Resource" uid="uid://c2s4in8j21nvt" path="res://resources/AbilityResources/crossbow_tower_upgrade.tres" id="2_qjxt7"]
+[ext_resource type="Resource" uid="uid://dlxqeraivwk1p" path="res://resources/AbilityResources/test_speel.tres" id="4_ehcwl"]
+[ext_resource type="Resource" uid="uid://dol8ouqmbky8n" path="res://resources/AbilityResources/bome_spell.tres" id="5_ijp75"]
+
+[node name="UpgradeManager" type="Node"]
+script = ExtResource("1_kfgj2")
+upgrade_screen = ExtResource("2_53v36")
+upgrade_pool = Array[Resource("res://resources/AbilityResources/AbilityUpgrade.gd")]([ExtResource("2_qjxt7"), ExtResource("4_ehcwl"), ExtResource("4_ehcwl"), ExtResource("5_ijp75")])

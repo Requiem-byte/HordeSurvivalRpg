@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://djfkk136hxaq1"]
+
+[ext_resource type="Script" path="res://scenes/components/enemy_spawner_component/enemy_spawner_component.gd" id="1_030fc"]
+[ext_resource type="Texture2D" uid="uid://drtqfcsi20o8c" path="res://assets/tiny_dungeon/Tiles/tile_0060.png" id="2_2xbw6"]
+
+[node name="EnemySpawnerComponent" type="Node2D" groups=["spawner"]]
+script = ExtResource("1_030fc")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SpawnPosition" type="Node2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="SpawnerTexture" type="Sprite2D" parent="."]
+texture = ExtResource("2_2xbw6")

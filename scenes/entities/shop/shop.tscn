@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://1k72heloik03"]
+
+[ext_resource type="PackedScene" uid="uid://bbpxpqrhnnd3q" path="res://scenes/components/tile_map.tscn" id="1_6exfd"]
+[ext_resource type="Script" path="res://scenes/entities/shop/shop.gd" id="1_6kr53"]
+[ext_resource type="PackedScene" uid="uid://o5hovf0aqiox" path="res://scenes/entities/sign/sign.tscn" id="2_dt5a2"]
+[ext_resource type="Script" path="res://scenes/components/circle_component.gd" id="4_alcfe"]
+[ext_resource type="FontFile" uid="uid://n35d0xnlaesi" path="res://assets/fonts/Minecraft.ttf" id="5_j0s73"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jhop0"]
+radius = 40.0
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_6kr53")
+
+[node name="TileMap" parent="." instance=ExtResource("1_6exfd")]
+layer_0/tile_data = PackedInt32Array(-65536, 1114112, 7, -1, 1114112, 6, -2, 1048576, 7, -3, 1048576, 6, -65535, 1245184, 6, -131072, 1245184, 5, -196607, 1179648, 4, -196608, 1245184, 4, -131073, 1114112, 4, -131074, 1114112, 4, -131075, 1048576, 4, -65539, 1048576, 5, -65538, 1114112, 5, -65537, 1114112, 5, -131071, 1179648, 5, -196606, 196608, 5, -196605, 1376256, 3, -196604, 1441792, 3, -131068, 1441792, 4, -65532, 1441792, 4, 65540, 1441792, 5, 4, 1441792, 4, 65539, 1376256, 3, 65538, 1376256, 3, 65537, 1310720, 6, 131067, 1310720, 5, 131069, 1376256, 3, 131070, 1376256, 3, -131077, 1310720, 3, -131076, 1376256, 3, -5, 1310720, 4, -65541, 1310720, 4, 65531, 1310720, 4, 65536, 131072, 7, 65534, 131072, 6, -4, 196608, 6, -65540, 196608, 5, 3, 196608, 5, 2, 196608, 6, -131069, 196608, 5, -131070, 196608, 6, -65534, 196608, 5, 65532, 196608, 5, 1, 327680, 7, 131071, 1441792, 6, 131068, 1376256, 3, -65533, 196608, 5)
+layer_1/tile_data = PackedInt32Array(65533, 196608, 6, -3, 196608, 5)
+
+[node name="Sign" parent="." instance=ExtResource("2_dt5a2")]
+position = Vector2(40, 40)
+text = "SHOP"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(8, 32)
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jhop0")
+
+[node name="CircleComponent" type="Node2D" parent="."]
+position = Vector2(8, 32)
+script = ExtResource("4_alcfe")
+radius = 40.0
+color = Color(0.811765, 1, 0.360784, 0.439216)
+
+[node name="E" type="Label" parent="."]
+offset_left = -12.0
+offset_top = -10.0
+offset_right = 28.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("5_j0s73")
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

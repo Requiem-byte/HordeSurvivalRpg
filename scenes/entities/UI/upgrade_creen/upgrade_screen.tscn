@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://ftlgmqbt6c5o"]
+
+[ext_resource type="Script" path="res://scenes/entities/UI/upgrade_creen/upgrade_screen.gd" id="1_ink5n"]
+[ext_resource type="FontFile" uid="uid://n35d0xnlaesi" path="res://assets/fonts/Minecraft.ttf" id="2_2nwv2"]
+[ext_resource type="PackedScene" uid="uid://k7r8i6ke63gj" path="res://scenes/entities/UI/ability_card/ability_card.tscn" id="2_jdqae"]
+
+[node name="UpgradeScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ink5n")
+ability_card_scene = ExtResource("2_jdqae")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 422.0
+offset_bottom = 31.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_2nwv2")
+text = "choose an ability"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="AbilityCardContainerontainer" type="BoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv3gom3dx5tyc"]
+
+[ext_resource type="Script" path="res://scenes/entities/bullets/arrow_bullet/ArrowBullet.gd" id="1_0uuk5"]
+[ext_resource type="Texture2D" uid="uid://c4w8s1bxmw4tb" path="res://assets/tiny_dungeon/Tiles/tile_0131.png" id="2_3tpbh"]
+[ext_resource type="Script" path="res://scenes/components/hurtbox_component/hurtbox_component.gd" id="3_vky83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xatyg"]
+size = Vector2(16, 6)
+
+[node name="ArrowBullet" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_0uuk5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57079
+texture = ExtResource("2_3tpbh")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("3_vky83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_xatyg")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://qsmyxtfds7li"]
+
+[ext_resource type="Script" path="res://scenes/entities/dungeon_core/dungeon_core.gd" id="1_8jffo"]
+[ext_resource type="PackedScene" uid="uid://bbpxpqrhnnd3q" path="res://scenes/components/tile_map.tscn" id="2_5tty8"]
+
+[node name="DungeonCore" type="Node2D"]
+script = ExtResource("1_8jffo")
+
+[node name="TileMap" parent="." instance=ExtResource("2_5tty8")]
+layer_0/tile_data = PackedInt32Array(-262145, 786432, 8, -196609, 786432, 10, -262144, 917504, 10, -131073, 589824, 4, -65537, 589824, 4, -1, 589824, 4, -196608, 720896, 4, -131072, 720896, 4, -327680, 917504, 8, -65536, 720896, 4)

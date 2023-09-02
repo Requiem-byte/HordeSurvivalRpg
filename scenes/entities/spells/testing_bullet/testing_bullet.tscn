@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqxr0uq68ikiq"]
+
+[ext_resource type="Script" path="res://scenes/entities/spells/testing_bullet/testing_bullet.gd" id="1_1xenn"]
+[ext_resource type="Texture2D" uid="uid://bl3i042ojdx80" path="res://assets/PineTools.com_files/row-12-column-7.png" id="2_c3oqt"]
+[ext_resource type="Script" path="res://scenes/components/hurtbox_component/hurtbox_component.gd" id="3_1mv2q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0e8b"]
+radius = 5.0
+
+[node name="TestingBullet" type="Node2D"]
+script = ExtResource("1_1xenn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c3oqt")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 128
+script = ExtResource("3_1mv2q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_r0e8b")

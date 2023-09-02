@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://o5hovf0aqiox"]
+
+[ext_resource type="Texture2D" uid="uid://bv3r6lgnlvjf2" path="res://assets/tiny_town/Tiles/tile_0083.png" id="1_1g75a"]
+[ext_resource type="Script" path="res://scenes/entities/sign/sign.gd" id="1_i044i"]
+[ext_resource type="FontFile" uid="uid://n35d0xnlaesi" path="res://assets/fonts/Minecraft.ttf" id="3_cfd5q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqgny"]
+radius = 24.0
+
+[node name="Sign" type="Node2D"]
+script = ExtResource("1_i044i")
+text = ""
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pqgny")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1g75a")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("3_cfd5q")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

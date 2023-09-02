@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://k7r8i6ke63gj"]
+
+[ext_resource type="Script" path="res://scenes/entities/UI/ability_card/ability_card.gd" id="1_dtvyo"]
+[ext_resource type="Texture2D" uid="uid://cku6m84suotv0" path="res://assets/PineTools.com_files/bow_empty.png" id="2_op8lc"]
+[ext_resource type="FontFile" uid="uid://n35d0xnlaesi" path="res://assets/fonts/Minecraft.ttf" id="2_ytsi2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ad6d"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="AbilityCard" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 150)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ad6d")
+script = ExtResource("1_dtvyo")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ytsi2")
+text = "test bulleyt"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+uppercase = true
+
+[node name="Texture" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_op8lc")
+expand_mode = 4
+
+[node name="Type" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ytsi2")
+text = "tower"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true

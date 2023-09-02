@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://bexqnoo775u0b"]
+
+[ext_resource type="Texture2D" uid="uid://mq3licaanohi" path="res://assets/tiny_dungeon/Tiles/tile_0084.png" id="1_33so8"]
+[ext_resource type="Script" path="res://scenes/entities/player/player.gd" id="1_uvxdf"]
+[ext_resource type="PackedScene" uid="uid://beb3ndfm2y2hp" path="res://scenes/components/health_component.tscn" id="2_e0yc7"]
+[ext_resource type="PackedScene" uid="uid://c8uf5rokl3rfc" path="res://scenes/components/velocity_component/velocity_component.tscn" id="3_i2pw8"]
+[ext_resource type="PackedScene" uid="uid://dj1iwtf8qv270" path="res://scenes/components/hurtbox_component/hurtbox_component.tscn" id="5_h447e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1xs4y"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tched"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_uvxdf")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_e0yc7")]
+MAX_HEALTH = 15.0
+
+[node name="VelocityComponent" parent="." instance=ExtResource("3_i2pw8")]
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("1_33so8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_1xs4y")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("5_h447e")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_tched")

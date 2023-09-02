@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://38kp22as2tk3"]
+
+[ext_resource type="Script" path="res://scenes/player_ability_manager.gd" id="1_fii58"]
+[ext_resource type="PackedScene" uid="uid://b2i64111bpe0n" path="res://scenes/entities/spells/bomb_ability/bomb_ability.tscn" id="2_aewml"]
+[ext_resource type="PackedScene" uid="uid://cwmo2ivxkfaga" path="res://scenes/entities/towers/crossbow_tower/crossbow_tower.tscn" id="3_cx5cn"]
+
+[node name="PlayerAbilityManager" type="Node2D"]
+script = ExtResource("1_fii58")
+default_ability = ExtResource("2_aewml")
+default_tower = ExtResource("3_cx5cn")

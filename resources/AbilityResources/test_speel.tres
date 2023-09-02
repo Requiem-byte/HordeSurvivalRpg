@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=4 format=3 uid="uid://dlxqeraivwk1p"]
+
+[ext_resource type="Script" path="res://resources/AbilityResources/AbilityUpgrade.gd" id="1_jvkch"]
+[ext_resource type="PackedScene" uid="uid://cqxr0uq68ikiq" path="res://scenes/entities/spells/testing_bullet/testing_bullet.tscn" id="1_qspcc"]
+[ext_resource type="Texture2D" uid="uid://bl3i042ojdx80" path="res://assets/PineTools.com_files/row-12-column-7.png" id="3_jqjfs"]
+
+[resource]
+script = ExtResource("1_jvkch")
+type = "Ability"
+title = "test bullet"
+scene = ExtResource("1_qspcc")
+texture = ExtResource("3_jqjfs")

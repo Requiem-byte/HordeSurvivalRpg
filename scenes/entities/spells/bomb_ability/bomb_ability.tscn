@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2i64111bpe0n"]
+
+[ext_resource type="Script" path="res://scenes/entities/spells/bomb_ability/bomb_ability.gd" id="1_hcgfv"]
+[ext_resource type="Texture2D" uid="uid://cjp86fmp47lm1" path="res://assets/PineTools.com_files/row-12-column-8.png" id="2_al54e"]
+[ext_resource type="PackedScene" uid="uid://p8748xqxdqeu" path="res://scenes/entities/spells/bomb_ability/bomb_zone.tscn" id="2_evofu"]
+[ext_resource type="Script" path="res://scenes/components/hurtbox_component/hurtbox_component.gd" id="3_rdn4c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mbiax"]
+
+[sub_resource type="Curve" id="Curve_8o3ij"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.701863, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5qtu0"]
+curve = SubResource("Curve_8o3ij")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qsef4"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 15.0
+emission_ring_inner_radius = 10.0
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+scale_curve = SubResource("CurveTexture_5qtu0")
+
+[node name="BombAbility" type="Node2D"]
+script = ExtResource("1_hcgfv")
+bomb_zone = ExtResource("2_evofu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_al54e")
+
+[node name="DirectHitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("3_rdn4c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirectHitBox"]
+shape = SubResource("CircleShape2D_mbiax")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_qsef4")
+preprocess = 1.0
